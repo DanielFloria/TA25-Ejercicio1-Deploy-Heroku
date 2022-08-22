@@ -32,7 +32,7 @@ public class FabricanteController {
 		return fabricanteServiceImpl.listarFabricantes();
 	}
 	
-	@GetMapping("/fabricantes/{id}")
+	@GetMapping("/fabricantes/{codigo}")
 	public Fabricante fabricantePorId(@PathVariable(name="codigo") Long id) {
 		Fabricante fabricantePorId = new Fabricante();
 		fabricantePorId = fabricanteServiceImpl.fabricantePorId(id);
@@ -42,7 +42,7 @@ public class FabricanteController {
 		return fabricantePorId;
 	}	
 	
-	@PutMapping("/fabricantes/{id}")
+	@PutMapping("/fabricantes/{codigo}")
 	public Fabricante actualizarFabricante(@PathVariable(name="codigo") Long id, @RequestBody Fabricante fabricante) {
 		Fabricante fabricanteSeleccionado = new Fabricante();
 		Fabricante fabricanteActualizado = new Fabricante();
@@ -56,7 +56,7 @@ public class FabricanteController {
 		return fabricanteActualizado;
 	}
 	
-	@DeleteMapping("/fabricantes/{id}")
+	@DeleteMapping("/fabricantes/{codigo}")
 	public void borrarFabricante(@PathVariable(name="codigo") Long id) {
 		fabricanteServiceImpl.borrarFabricante(id);
 	}

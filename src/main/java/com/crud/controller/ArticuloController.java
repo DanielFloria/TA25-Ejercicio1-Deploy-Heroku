@@ -32,7 +32,7 @@ public class ArticuloController {
 		return articuloServiceImpl.listarArticulos();
 	}
 
-	@GetMapping("/articulos/{id}")
+	@GetMapping("/articulos/{codigo}")
 	public Articulo articuloPorId(@PathVariable(name="codigo") Long id) {
 		Articulo articuloPorId = new Articulo();
 		articuloPorId = articuloServiceImpl.articuloPorId(id);
@@ -42,7 +42,7 @@ public class ArticuloController {
 		return articuloPorId;
 	}	
 
-	@PutMapping("/articulos/{id}")
+	@PutMapping("/articulos/{codigo}")
 	public Articulo actualizarArticulo(@PathVariable(name="codigo") Long id, @RequestBody Articulo articulo) {
 		Articulo articuloSeleccionado = new Articulo();
 		Articulo articuloActualizado = new Articulo();
@@ -58,7 +58,7 @@ public class ArticuloController {
 		return articuloActualizado;
 	}
 
-	@DeleteMapping("/articulos/{id}")
+	@DeleteMapping("/articulos/{codigo}")
 	public void borrarArticulo(@PathVariable(name="codigo") Long id) {
 		articuloServiceImpl.borrarArticulo(id);
 	}
